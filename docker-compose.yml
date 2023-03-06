@@ -1,17 +1,17 @@
 version: '3.9'
 
 services:
-  nginx1:
+  nginx:
     image: nginx:latest
     network_mode: host
-    container_name: nginx1
+    container_name: nginx
     restart: unless-stopped
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./nginx/logs:/var/log/nginx
   
-  flask1:
+  flask:
     image: python
     network_mode: host
     restart: unless-stopped

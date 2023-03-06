@@ -4596,3 +4596,14 @@
 2023/03/06 08:40:10 [emerg] 1#1: bind() to 0.0.0.0:80 failed (98: Address already in use)
 2023/03/06 08:40:10 [notice] 1#1: try again to bind() after 500ms
 2023/03/06 08:40:10 [emerg] 1#1: still could not bind()
+2023/03/06 08:41:13 [emerg] 1#1: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2023/03/06 08:41:13 [notice] 1#1: try again to bind() after 500ms
+2023/03/06 08:41:13 [emerg] 1#1: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2023/03/06 08:41:13 [notice] 1#1: try again to bind() after 500ms
+2023/03/06 08:41:13 [emerg] 1#1: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2023/03/06 08:41:13 [notice] 1#1: try again to bind() after 500ms
+2023/03/06 08:41:13 [emerg] 1#1: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2023/03/06 08:41:13 [notice] 1#1: try again to bind() after 500ms
+2023/03/06 08:41:13 [emerg] 1#1: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2023/03/06 08:41:13 [notice] 1#1: try again to bind() after 500ms
+2023/03/06 08:41:13 [emerg] 1#1: still could not bind()

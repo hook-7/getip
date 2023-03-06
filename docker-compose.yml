@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  nginx1:
+    image: nginx:latest
+    network_mode: host
+    container_name: nginx1
+    restart: unless-stopped
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/logs:/var/log/nginx
+  
+  flask1:
+    image: python
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ./getip.py:/getip.py:ro
+    command: pip install flask && python3 /getip.py
+
+

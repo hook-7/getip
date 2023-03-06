@@ -17,6 +17,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./getip.py:/getip.py:ro
-    command: pip install flask && python3 /getip.py
+      - ./start.sh:/start.sh:ro
+    command: bash /start.sh
 
 

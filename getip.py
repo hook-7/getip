@@ -14,7 +14,7 @@ app = Flask(__name__)
 def main():
     ip = request.headers.get('X-Real-IP', request.remote_addr)
     if not [i for i in c.find({"domain":ip})]:
-        current_time = datetime.now()
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         c.insert_one({"domain":ip, 'date': current_time})
     return ip
 

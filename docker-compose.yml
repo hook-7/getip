@@ -20,5 +20,7 @@ services:
       - ./getip.py:/getip.py:ro
       - ./start.sh:/start.sh:ro
     command: bash /start.sh
+    env_file:
+      - ./.env
 
 

@@ -1,1 +1,1 @@
-pip install flask && python /getip.py
+pip install flask pymongo && python /getip.py

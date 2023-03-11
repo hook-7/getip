@@ -23,4 +23,11 @@ services:
     env_file:
       - ./.env
 
-
+  xui:
+    image: enwaiax/x-ui
+    container_name: x-ui
+    volumes:
+      - ./db/:/etc/x-ui/
+      - ./cert/:/root/cert/
+    restart: unless-stopped
+    network_mode: host

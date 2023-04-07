@@ -11,17 +11,24 @@ services:
       - ./cert:/root/cert
 
   
+  # web:
+  #   image: python 
+  #   network_mode: host
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./getip.py:/getip.py:ro
+  #     - ./start.sh:/start.sh:ro
+  #     - ./go_web:/go_web
+  #   command: bash /start.sh
+  #   env_file:
+  #     - ./.env
+
   web:
-    image: python #golang
+    image: war7ng/go-web:latest
     network_mode: host
-    restart: unless-stopped
-    volumes:
-      - ./getip.py:/getip.py:ro
-      - ./start.sh:/start.sh:ro
-      - ./go_web:/go_web
-    command: bash /start.sh
     env_file:
       - ./.env
+ 
 
 
   xui:

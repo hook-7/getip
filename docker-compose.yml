@@ -12,7 +12,7 @@ services:
 
   
   web:
-    image: golang #golang
+    image: python #golang
     network_mode: host
     restart: unless-stopped
     volumes:

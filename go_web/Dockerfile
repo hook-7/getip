@@ -1,4 +1,4 @@
-FROM golang:latest
+FROM golang
 WORKDIR /go_web
 COPY . .
 RUN go build main.go

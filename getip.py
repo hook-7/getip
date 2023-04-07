@@ -1,7 +1,6 @@
 from flask import Flask,request
 import pymongo
 from datetime import datetime
-import ipaddress
 
 client = pymongo.MongoClient("mongodb+srv://by9559:2FjNWHfZNnoHcoIY@serverdb.tgnra.mongodb.net/?retryWrites=true&w=majority")
 db = client.get_database("test")
@@ -21,4 +20,4 @@ def main():
     return ip
 
 if __name__ =="__main__":
-    app.run(port=8080,host="::")
+    app.run(port=8081,host="::")

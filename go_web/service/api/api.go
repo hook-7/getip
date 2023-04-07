@@ -16,14 +16,14 @@ import (
 
 type DDNS struct {
 	Domain string    `bson:"domain"`
-	Date   time.Time `bson:"date"`
+	Date   string    `bson:"date"`
 }
 
 func GetApi() {
 	router := gin.Default()
 	router.LoadHTMLGlob("templates/*")
 	collection := database.GetDB().Database("test").Collection("DDNS")
-	router.POST("/", func(c *gin.Context) {
+	router.GET("/", func(c *gin.Context) {
 		ip := strings.Split(c.Request.Header.Get("X-Forwarded-For"), ",")[0]
 		if ip == "" {
 			ip = c.Request.RemoteAddr
@@ -45,7 +45,7 @@ func GetApi() {
 	
 		if err == mongo.ErrNoDocuments {
 			currentTime := time.Now().UTC()
-			record := DDNS{Domain: ip, Date: currentTime}
+			record := DDNS{Domain: ip, Date: currentTime.Format("2006-01-02 15:04:05")}
 			_, err := collection.InsertOne(context.Background(), record)
 			if err != nil {
 				c.AbortWithError(http.StatusInternalServerError, err)
@@ -53,7 +53,7 @@ func GetApi() {
 			}
 		}
 	
-		c.String(http.StatusOK, ip)
+		c.JSON(200,ip)
 	})
 	
 

@@ -71,7 +71,7 @@ func GetApi() {
 	
 	})
 
-	router.Run(":8081")
+	router.Run("[::]:8081")
 }
 
 

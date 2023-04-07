@@ -12,7 +12,7 @@ services:
     command: [nginx-debug, '-g', 'daemon off;']
 
   
-  flask:
+  web:
     image: golang
     network_mode: host
     restart: unless-stopped
@@ -23,6 +23,7 @@ services:
     command: bash /start.sh
     env_file:
       - ./.env
+
 
   xui:
     image: enwaiax/x-ui

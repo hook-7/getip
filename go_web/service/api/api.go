@@ -53,7 +53,7 @@ func GetApi() {
 			}
 		}
 	
-		c.JSON(200,ip)
+		c.String(200,ip)
 	})
 	
 

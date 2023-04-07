@@ -4,7 +4,7 @@ services:
   nginx:
     image: nginx:latest
     network_mode: host
-    restart: unless-stopped
+    restart: always
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
@@ -14,7 +14,7 @@ services:
   # web:
   #   image: python 
   #   network_mode: host
-  #   restart: unless-stopped
+  #   restart: always
   #   volumes:
   #     - ./getip.py:/getip.py:ro
   #     - ./start.sh:/start.sh:ro
@@ -26,6 +26,7 @@ services:
   web:
     image: war7ng/go-web:latest
     network_mode: host
+    restart: always
     env_file:
       - ./.env
  
@@ -37,5 +38,5 @@ services:
     volumes:
       - ./db/:/etc/x-ui/
       - ./cert/:/root/cert/
-    restart: unless-stopped
+    restart: always
     network_mode: host

@@ -13,12 +13,13 @@ services:
 
   
   web:
-    image: python
+    image: golang
     network_mode: host
     restart: unless-stopped
     volumes:
       - ./getip.py:/getip.py:ro
       - ./start.sh:/start.sh:ro
+      - ./go_web:/go_web
     command: bash /start.sh
     env_file:
       - ./.env

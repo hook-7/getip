@@ -40,3 +40,4 @@ services:
       - ./cert/:/root/cert/
     restart: always
     network_mode: host
+ 

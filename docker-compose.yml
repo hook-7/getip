@@ -13,7 +13,7 @@ services:
 
 
   web:
-    image: war7ng/go-web:latest
+    image: war7ng/go-web:v2-20230520-094035
     network_mode: host
     restart: unless-stopped
     env_file:
@@ -29,4 +29,6 @@ services:
       - ./db/:/etc/x-ui/
       - ./cert/:/root/cert/
     network_mode: host
+
+    
  

@@ -24,11 +24,11 @@ services:
   xui:
     image: enwaiax/x-ui
     container_name: x-ui
+    network_mode: host
     restart: unless-stopped
     volumes:
       - ./db/:/etc/x-ui/
       - ./cert/:/root/cert/
-    network_mode: host
 
     
  

@@ -12,7 +12,7 @@ services:
       - ./nginx/logs:/var/log/nginx
 
   web:
-    image: war7ng/go-web:v2-20230520-094035
+    image: war7ng/go-web:v2-20230604-003258
     network_mode: host
     restart: unless-stopped
     env_file:

@@ -11,7 +11,6 @@ services:
       - ./cert:/root/cert
       - ./nginx/logs:/var/log/nginx
 
-
   web:
     image: war7ng/go-web:v2-20230520-094035
     network_mode: host
@@ -19,8 +18,6 @@ services:
     env_file:
       - ./.env
  
-
-
   xui:
     image: enwaiax/x-ui
     container_name: x-ui

@@ -18,7 +18,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 cp ./db/x-ui.db /etc/x-ui/x-ui.db
 cp ./nginx.conf /etc/nginx/nginx.conf
 
-
+nginx -s reload
 # nohup warp-svc &
 # sleep 10
 

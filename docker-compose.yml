@@ -3,20 +3,22 @@ version: '3.9'
 services:
   nginx:
     image: nginx:latest
-    network_mode: host
     restart: unless-stopped
+    ports:
+      - 443:443
+      - 80:80
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./cert:/root/cert
       - ./nginx/logs:/var/log/nginx
 
-  web:
-    image: war7ng/go-web:v2-20230604-003258
-    network_mode: host
-    restart: unless-stopped
-    env_file:
-      - ./.env
+  # web:
+  #   image: war7ng/go-web:v2-20230604-003258
+  #   network_mode: host
+  #   restart: unless-stopped
+  #   env_file:
+  #     - ./.env
  
   xui:
     image: enwaiax/x-ui

@@ -13,9 +13,9 @@ apt-get autoremove
 
 # apt-get install -y cloudflare-warp
 
-# bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
-# cp ./db/x-ui.db /etc/x-ui/x-ui.db
+cp ./db/x-ui.db /etc/x-ui/x-ui.db
 # cp ./nginx.conf /etc/nginx/nginx.conf
 
 # nginx -s reload
